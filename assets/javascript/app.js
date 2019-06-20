@@ -1,30 +1,34 @@
 var Concert = require("./concert");
+var Spotify=require("./spotify");
+var Movies=require("./movies");
 
 require("dotenv").config();
 
 var keys = require("./keys.js");
-var Spotify = require('node-spotify-api');
-var spotify = new Spotify(keys.spotify);
+var Spotify1 = require('node-spotify-api');
+var spotify2 = new Spotify(keys.spotify);
 
 var search = process.argv[2];
 console.log(search)
 
 var concert= new Concert ();
+var spotify=new Spotify();
+var movies=new Movies();
 
 
 var term = process.argv.slice(3).join(" ");
 console.log(term)
 
 if (search === "concert") {
-    console.log("concert");
+   
     concert.findShow(term);
   } else if (search==="spotify") {
-    console.log("spotify")
-    // tv.findActor(term);
+    spotify.findArtist(term)
    
   }else if (search==="movie") {
-      console.log("movie")
+    movies.findMovie(term)
+   
   }else if (search==="do") {
-      console.log("do")
+    
   
 }
