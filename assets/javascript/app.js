@@ -13,7 +13,6 @@ var search = process.argv[2];
 console.log(search)
 
 var concert= new Concert ();
-// var spotify=new Spotify();
 var movies=new Movies();
 
 
@@ -27,7 +26,7 @@ if (search === "concert") {
     spotifyFun(term)
    
   }else if (search==="movie") {
-    movies.findMovie(term)
+    movies.findMovie(term);
    
   }else if (search==="do") {
     

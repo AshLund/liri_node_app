@@ -18,7 +18,7 @@ var Movies = function() {
             var language=response.data.Language
             var actors=response.data.Actors
 
-           console.log("Title::" + title)
+           console.log("Title:" + title)
            console.log("Year:" + year)
            console.log("IMBD Rating:" + rating)
            console.log("Rotten Tomatoes Rating:" + tomato)
