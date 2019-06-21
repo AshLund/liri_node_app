@@ -3,6 +3,7 @@ var Spotify=require("./spotify");
 var Movies=require("./movies");
 
 require("dotenv").config();
+var fs = require("fs");
 
 var keys = require("./keys.js");
 var Spotifyreq = require('node-spotify-api');
@@ -19,21 +20,29 @@ var movies=new Movies();
 var term = process.argv.slice(3).join(" ");
 console.log(term)
 
-if (search === "concert") {
+if (search === "concert-this") {
    
     concert.findShow(term);
-  } else if (search==="spotify") {
+  } else if (search==="spotify-this-song") {
     spotifyFun(term)
    
-  }else if (search==="movie") {
+  }else if (search==="movie-this") {
     movies.findMovie(term);
    
   }else if (search==="do") {
-    
-  
-}
+    fs.readFile("random.txt", "utf8", function(error, data) {
+      if (error) {
+        return console.log(error);
+      }
+      var dataArr = data.split(",");
+        console.log(dataArr)
+    });
+  }
 
 function spotifyFun () {
+  if (!term) {
+    term = "The Sign by Ace of Base";
+  }
     spotify.search (
         {
             type: "track",
@@ -54,9 +63,6 @@ function spotifyFun () {
         console.log("Track Name:" + name)
         console.log("Link:" + link)
         console.log("Album:" + album)
-
-
-      
     }
     );
     

@@ -5,6 +5,9 @@ var axios = require("axios");
 
 var Movies = function() {
     this.findMovie=function(term) {
+        if (!term) {
+            term = "Mr. Nobody";
+          }
         movieURL= "http://www.omdbapi.com/?t=" + term + "&y=&plot=short&apikey=trilogy";
     
 
