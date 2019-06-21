@@ -11,11 +11,4 @@ For song information, users type in "spotify-this-song" and a song name, and Lir
 
 If the user types in "do-what-it-says", LIRI will give back information on the Backstreet Boys' song, "I Want It That Way" by reading a text document.
 
-To see screen shots of how the app works:
-![Concert Example] (LIRI/concert.png?raw=true "Concert")
-![Song Example] (/LIRI/Spotify.png)
-![Song example--no song given] (/LIRI/spoitfy with no song.png)
-![Movie Example] (/LIRI/Movie.png)
-![Movie Example--no movie given] (/LIRI/movie with no movie input.png)
-![Do what it says] (/LIRI/do what it says.png)
 
